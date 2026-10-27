@@ -36,7 +36,16 @@ a{color:var(--navy2)}
 .actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.6rem}
 .hero .btn-ghost{border-color:#fff;color:#fff}
 .hero .btn-ghost:hover{background:#fff;color:var(--navy)}
-.hero-art{width:100%;height:auto;border-radius:var(--r);border:1px solid #2b4078;box-shadow:0 20px 40px rgba(0,0,0,.3)}
+.hero-art {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--r);
+  border: 1px solid #2b4078;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, .3);
+                        }
 .section{padding:3.5rem 0}
 .alt{background:var(--soft)}
 .intro{max-width:65ch;font-size:1.05rem}
