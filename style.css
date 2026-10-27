@@ -117,38 +117,73 @@ a{color:var(--navy2)}
 .pv2{grid-template-columns:repeat(3,1fr);grid-template-rows:1.4fr 1fr}.pv2 i:first-child{grid-column:span 3;background:var(--navy2)}
 .pv3{background:var(--navy);grid-template-columns:1.2fr 1fr;border-color:var(--navy)}.pv3 i{background:#2b4078}.pv3 i:first-child{grid-row:span 2}.pv3 i:nth-child(2){background:#f59e0b}
 .portfolio-cta{margin-top:2rem;text-align:center;border:1px solid var(--line);border-radius:var(--r);padding:1.6rem;background:var(--soft)}
-/* Mobile portfolio layout fix */
-@media (max-width: 600px) {
+
+/* Vantorax Studio - mobile width and portfolio image fix */
+html {
+  width: 100%;
+  max-width: 100%;
+}
+
+body {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin: 0;
+  overflow-x: clip;
+}
+
+.wrap {
+  width: calc(100% - 32px);
+  max-width: var(--max);
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 0;
+}
+
+.grid,
+.grid.g3,
+.card,
+.card.concept {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.card.concept {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 14px;
+}
+
+.card.concept .preview {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  padding: 8px;
+  margin-bottom: 12px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 699px) {
   .wrap {
-    width: 100%;
-    max-width: 100%;
-    padding-left: 14px;
-    padding-right: 14px;
-    box-sizing: border-box;
+    width: calc(100% - 28px);
   }
 
   .grid.g3 {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 16px;
   }
 
-  .card.concept {
-    min-width: 0;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 14px;
+  .section {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
   }
 
   .card.concept .preview {
-    display: block;
-    width: 100%;
-    height: 190px;
-    object-fit: cover;
-    box-sizing: border-box;
-  }
-
-  .section {
-    padding-left: 0;
-    padding-right: 0;
+    aspect-ratio: 16 / 10;
+    height: auto;
   }
 }
